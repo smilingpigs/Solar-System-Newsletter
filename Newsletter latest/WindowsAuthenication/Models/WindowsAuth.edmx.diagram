@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c8a55124b164f75a729d73d2e002f87" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.AspNetRole" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="7.875" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="5.375" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.AspNetUser" Width="1.5" PointX="3" PointY="2.375" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.Engagement" Width="1.5" PointX="7.75" PointY="0.875" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.SubEngagement" Width="1.5" PointX="10" PointY="1" />
+        <EntityTypeShape EntityType="WindowsAuthenticationModel.UsersEngagementsMapping" Width="1.5" PointX="5.25" PointY="1.25" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK__UsersEnga__Added__318258D2" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK__UsersEnga__Modif__114A936A" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK__UsersEnga__UserI__123EB7A3" />
+        <AssociationConnector Association="WindowsAuthenticationModel.FK__SubEngage__Engag__7B5B524B" />
+        <AssociationConnector Association="WindowsAuthenticationModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

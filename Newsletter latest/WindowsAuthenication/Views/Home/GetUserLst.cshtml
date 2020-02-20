@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "GetUserLst";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetUserLst</h2>
+
+@{
+    List<WindowsAuthenication.Models.UserViewModel> lst = Session["Lst"] as List<WindowsAuthenication.Models.UserViewModel>;
+}
+
+<label>Total Count @Session["TotalCount"]</label>
+<table cellpadding="10" cellspacing="10" border="1" >
+    <thead>
+        <tr>
+            <td>
+                User Name
+            </td>
+            <td>
+                Designation
+            </td>
+            <td>
+                Location
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var itm in lst)
+        {
+            <tr>
+                <td>
+                    @itm.UserName
+                </td>
+                <td>
+                    @itm.Designation
+                </td>
+                <td>
+                    @itm.Location
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>
+<style>
+   #cn-button{
+       display:none;
+   }
+</style>

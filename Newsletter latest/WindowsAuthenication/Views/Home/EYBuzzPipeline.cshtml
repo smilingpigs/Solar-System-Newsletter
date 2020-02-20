@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "EYBuzzPipeline";
+}
+
+
+
+<img src="~/Content/Images/04_EY_buzz_pipeline_02.png" />
+
+<canvas style="margin-left:-198px"></canvas>
+
+<a style="float:right" href='@Url.Action("ARCreactor", "Home")'>
+
+    <img class="imageHomes" style=" z-index: 3; width: 60px; margin-left: 270px;" src="~/Content/next_button.png" />
+
+</a>
+<a style="float:left;" href='@Url.Action("NewsYouCanUse", "Home")'>
+
+    <img class="imageHomes" style=" z-index: 3; width: 60px; transform: rotate(177deg); margin-left: 25px; " src="~/Content/next_button.png" />
+
+</a>
+<style>
+    body, html {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 4em;
+        color: white;
+        font-family: 'Merriweather', serif;
+        letter-spacing: 2px;
+        pointer-events: none;
+        font-weight: 700;
+        position: absolute;
+        top: 30%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    img {
+        position: absolute;
+        position: absolute;
+        width: 130%;
+        /* right: -69px; */
+        top: -95px;
+       
+        LEFT: -178px;
+        z-index: 1;
+    }
+
+    /*.imageHome {
+        display: none;
+    }*/
+</style>
+<script src="~/Scripts/3dAinmation.js"></script>
+@*<script>
+    $(document).ready(function () {
+        $("#cn-button").trigger("click");
+    });
+</script>*@
+

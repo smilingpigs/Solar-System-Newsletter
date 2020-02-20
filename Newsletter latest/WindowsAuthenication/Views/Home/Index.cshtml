@@ -1,0 +1,325 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html>
+
+<head>
+    <title>Newsletter - March 2019</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <div class="ct" id="t1">
+        <div class="ct" id="t2">
+            <div class="ct" id="t3">
+                <div class="ct" id="t4">
+                    <div class="ct" id="t5">
+                        <div class="ct" id="t6">
+                            <div class="ct" id="t7">
+                                <div class="ct" id="t8">
+                                    <ul id="menu">
+                                        <a href="#t1" id="icon" class="tooltip">
+                                            <li class="icon fa fa-home" id="uno"></li>
+                                            <span class="tooltiptext">HOME</span>
+                                        </a>
+                                        <a href="#t2" id='icon2' class="tooltip">
+                                            <li class="icon fa fa-street-view" id="dos"></li>
+                                            <span class="tooltiptext">EDITOR'S NOTE</span>
+                                        </a>
+                                        <a href="#t3" id='icon3' class="tooltip">
+                                            <li class="icon fa fa-rocket" id="tres"></li>
+                                            <span class="tooltiptext">SPOTLIGHT</span>
+                                        </a>
+                                        <a href="#t4" id='icon4' class="tooltip">
+                                            <li class="icon fa fa-space-shuttle" id="cuatro"></li>
+                                            <span class="tooltiptext">EY BUZZ</span>
+                                        </a>
+                                        <a href="#t5" id='icon5' class="tooltip">
+                                            <li class="icon fa fa-star-half-o" id="cinco"></li>
+                                            <span class="tooltiptext">ARCreactor</span>
+                                        </a>
+                                        <a href="#t6" id='icon6' class="tooltip">
+                                            <li class="icon fa fa-suitcase" id="seis"></li>
+                                            <span class="tooltiptext">INVENTION</span>
+                                        </a>
+                                        <a href="#t7" id='icon7' class="tooltip">
+                                            <li class="icon fa fa-cogs" id="siete"></li>
+                                            <span class="tooltiptext">YAM JAM QUOTES</span>
+                                        </a>
+                                        <a href="#t8" id='icon8' class="tooltip">
+                                            <li class="icon fa fa-paper-plane" id="ocho"></li>
+                                            <span class="tooltiptext">CONTACT US</span>
+                                        </a>
+                                    </ul>
+
+                                    <div class="page" id="p1">
+                                        <section>
+                                            <div style="opacity:0.4">
+                                                <!-- <div id="player_wrapper" style="height:130% !important; width:114% !important;">
+                                                    <iframe id="player" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media"  title="YouTube" width="100%" height="100%" src="https://www.youtube.com/embed/f7hbWvHKns0?autoplay=1&start=110&end=250&controls=0&loop=1&playlist=f7hbWvHKns0&volume=0&enablejsapi=1&fs=0"></iframe>
+                                                   <div class="overlay"></div>
+                                                 </div> -->
+                                                <div id="video-viewport">
+                                                    <video width="1920" height="1280" src="~/Content/css/sola1.webm" type="video/webm" autoplay muted loop></video>
+                                                </div>
+                                            </div>
+
+                                            <div style="position:absolute;width:100%;height:100%;right:0;top:45%;color:white;font-size:15vmin;text-align:center;text-shadow: 0px 3px black;">
+                                                <div id="container">
+                                                    <h1>I N C E P T I O N</h1>
+                                                    <h1>I N C E P T I O N</h1>
+                                                    <h1>I N C E P T I O N</h1>
+                                                </div>
+                                                <div id="test" style="position:relative; top:-200px;">
+                                                    <span class="userName"></span>
+                                                </div>
+                                                <div style="MARGIN-TOP:10VMIN;">
+                                                    <h1 style="FONT-SIZE:3VMIN;font-family:'Open Sans',sans-serif;">ARCnet Corridor</h1>
+                                                    <!-- <h1 style="FONT-SIZE:3VMIN;">S U B - T I T L E</h1>
+                                                       <h1 style="FONT-SIZE:3VMIN;">S U B - T I T L E</h1> -->
+                                                </div>
+                                                <div id="container1" style="MARGIN-TOP:10VMIN;display:inline-block;width:600px;">
+                                                    <div class="col-md-12">
+                                                        <span id="demo-text" style="font-size:30px; text-transform:uppercase">Welcome @Session["name"]</span>
+                                                    </div>
+                                                    <!-- <div>
+                                                      <i class="fa fa-1x fa-arrow-circle-right alignGoButton" onclick="testMe()"></i>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p2">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        EDITOR'S NOTE
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        “Innovation is moving in a scarily fast pace” – <span style="color:#fff;">Bill Gates</span><br /><br />
+
+                                                        As the world celebrates <span style="color:#fff;">‘World Creativity and Innovation Week’</span> from <span style="color:#fff;">15 - 21 April</span>, it is yet again time to encourage ourselves and others to use their creativity to make the world a better place and to make their place in the world better too.<br /><br />
+
+                                                        Inspire new action, support new ideas, solve problems in new ways, collaborate with new people and concepts, hold new conversations, just take that plunge to make the world a better place.
+
+                                                        For us at EY, ‘Innovation’ is not an option, it is the way we live!<br /><br />
+
+                                                        The acceleration of change and the scale of disruption through data, technology, digitalization, globalization and other
+                                                        many such forces mean, we don’t just evolve to survive, but we lead the change.<br /><br />
+
+                                                        Adding to this commitment for innovation, we are delighted to the India rollout of EY CogniStreamer®, a state-of-the- art
+                                                        collaborative innovation platform, built on  a  4th generation software that offers full flexibility to support an innovation
+                                                        journey across the enterprise. This further strengthen our expertise in innovation management and thereby play a pivotal role
+                                                        in digital transformation and the growing importance of big data. This new solution to our bouquet of services shall
+                                                        accelerate our Vision 2020+ ambitions.<br /><br />
+
+                                                        Stay tuned for ARCnet corridor mailers and be a part of the EY’s Innovation Journey!!<br /><br />
+
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div id="picture" style="position:absolute; bottom: 30px; text-align:right;width:90%;">
+                                                <div style="display:inline-block;top:106px;position: relative;color: #dbc838; font-family:'Segoe UI',sans-serif;">
+                                                    <div>Terry Thomas</div>
+                                                    <div>Innovation Center Leader & Partner</div>
+                                                    <div>Operations & Advisory</div>
+                                                </div>
+                                                <img class="col-md-2" src="~/Content/textures/terry.png" />
+
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p3">                                        
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        SPOTLIGHT
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        CogniStreamer a state- of- the- art Collaborative Innovation Platform. CogniStreamer is 4th generation software in the field of Innovation, enabling employees to unite and offer, improve and evaluate imaginative thoughts online.<br /><br />
+                                                        CogniStreamer’s strategy consultants will help to create an innovation strategy, addressing key questions around innovation focus (incremental, adjacent, radical/disruptive and architectural innovation), value creation focus (operational excellence, product performance, customer centricity), value capture tactics (agility, lock-in, patents, secrecy). They will also help you to benchmark our innovation capabilities and develop an innovation roadmap that drives us towards a more entrepreneurial culture, fostering bottom up innovation across several innovation domains.<br /><br />
+                                                        EY CogniStreamer’s innovation framework provides several innovation programs to trigger companywide entrepreneurial behaviour, stimulating every employee to team up, collaborate and add value in their area of expertise. Nobody is left out.<br /><br />
+                                                        With this acquisition, EY is responding to the digital transformation and the growing importance of big data. Innovation is a key ingredient in EY’s success so this acquisition is going to accelerate our Vision 2020+ ambitions. This deal will also strengthen our expertise in innovation management and more specialized consultancy services<br /><br />
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p4">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        T I T L E &nbsp;&nbsp;  H E A D E R
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        <span style="color:#414141;font-size:24px;">B R I E F &nbsp;&nbsp; H E A D E R</span><br /><br />
+                                                                                                                                    <span>
+                                                                                                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+                                                                                                                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br /></span>
+                                                                                                                                        <br /><br />
+                                                        <span style="color:#7c7c7c;">
+                                                                                                                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
+                                                                                                                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.
+                                                                                                                                        <br /><br />
+                                                                                                                                    </span>  <br />                                                                     
+                                                                                                                                    <span style="color:#414141;">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores<br />
+                                                        eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,<br />
+                                                        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore<br />
+                                                        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam <br />corporis suscipit laboriosam, nisi ut aliquid ex ea commodi </span><br />
+                                                        
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p5">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        ARCreactor
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        Are you ready for the ideation month?<br /><br />
+                                                        <span style="color:#ffe200;">What?</span><br />
+                                                        Send creative/innovative ideas or ways to make client service delivery simpler and more effective at EY.<br /><br />
+                                                        <span style="color:#ffe200;">How?</span><br />
+                                                        Submit your ideas <a href="http://in.ey.net/INARCnet/Home">http://in.ey.net/INARCnet/Home</a><br /><br />
+
+                                                        <span style="color:#ffe200;">Criteria:</span><br />
+                                                        Teaming  (5 - 10 members) - Ideas should be  an outcome of collective brainstorming<br />
+                                                        Bonus points will be given for ideas that can be applied to two or more service lines<br /><br />
+
+                                                        <span style="color:#ffe200;">What do you win?</span><br />
+                                                        The top 5 ideas stand a chance to win gift vouchers worth INR 25,000 each<br /><br />
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section> 
+                                    </div>
+                                    <div class="page" id="p6">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        INVENTION
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        Computer mouses are the most traditional form of hardware interacting with software. With the assistance of wearable technology we have come a long way at modernizing the computer mouse. Here are new approaches that can replace the old mouse and make working with a computer fun.
+                                                        <br />
+                                                        Mycestro is a wearable 3D mouse which you wear on your index finger. It has all the functionalities of a regular mouse and the cursor is controlled by your hand movement. Mycestro claims that due to its lightweight it will not interfere with your keyboarding. It has 3 buttons just like a regular mouse and if you want to scroll you just slide your thumb on a thumbpad.
+                                                        <br /><br />
+
+                                                        <b>ThumbTrack</b> is also worn on your index finger and it has similar functions as Mycestro.                                                        
+                                                        You can click and scroll as you would in a traditional mouse<br />
+                                                        You can work with it for 15 hours straight before charging it<br />
+                                                        ThumbTrack can make presenting PowerPoints easy and interactive<br />
+                                                        <br />
+                                                        <b> Maestro Gesture Glove </b>puts electronic power in your hands.<br />
+                                                        This glove used to control electronic devices and machines with hand and arm gestures. You are able to use it in multiple ways<br/>
+
+                                                        They provide a Maestro Gesture development software kit – so you can choose to control your drone, GoPro, gaming console, or laptop<br/>
+                                                        <br />
+                                                        
+                                                        Improve you tech style – start using wearable mouse or gloves in your everyday life.<br />
+                                                        Source: <a href="https://www.wearable-technologies.com/2015/09/wireless-wearable-mouse/">https://www.wearable-technologies.com/2015/09/wireless-wearable-mouse/ </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p7">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        YAM JAM QUOTES
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        <span style="color:#ffe200;">Should Innovation be taught or motivated?</span><br />
+                                                        “Motivation is a powerful, yet dangerous tool that often has erratic results. Teaching is for knowledge; to understand<br /> the means to achieve an objective; to understand the available methods to <br />accomplish a task. Neither can translate into true innovation.
+                                                        You cannot motivate innovation, at least not directly; you cannot teach it.<br />
+                                                        Simply put, innovation is inspired. It stems from a genuine need to address a problem”.<br /><br />
+
+                                                        Akhil Babel, a  Senior Consultant, Cybersecurity is a boomerang and his current spell with EY has been about 2 years. <br />
+                                                        He generally spends time understanding device security. Mobile device security is one of his favourite topics to read on.<br />
+                                                        Akhil loves to tinker with technology. His favourite pastime after playing video games is making little projects with his Raspberry Pi.<br />
+
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="page" id="p8">
+                                        <section>
+                                            <div class="col-md-12">
+                                                <div class="col-md-10" style="position:absolute; top:20px; padding:10px; color:white;">
+                                                    <p style="font-size: 36px; letter-spacing:5px; text-align: center;">
+                                                        CONTACT US
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-8" id="content" style="position:absolute; left:60px; line-height: 1.6; font-size: 18px; top:100px; padding:10px; color:#a8a8a8;width:80%;text-align:justify">
+                                                    <p class="split">
+                                                        Have a story or win to share or simply need more info on what you can do to be a part of the innovation community.<br /> connect with us.<br /><br />
+                                                        innovation.center@in.ey.com
+
+
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    @*<script>
+        openURL();
+        function openURL() {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.run("chrome http://ingurvmudefap01.eyua.net:8080");
+        }       
+    </script>*@
+    <link href="~/Content/css/Style.css" rel="stylesheet" />
+    <script src="~/Scripts/NewsletterJS.js"></script>
+</body>
+</html>
+
+
+
+

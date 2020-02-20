@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsLetterDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NewsLetterDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AspNetUsers" EntityType="NewsLetterDbModel.AspNetUser" />
+    <EntitySet Name="UsersTables" EntityType="NewsLetterDbModel.UsersTable" />
+  </EntityContainer>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="adspath" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="distinguishedname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="userprincipalname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UsersTable">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

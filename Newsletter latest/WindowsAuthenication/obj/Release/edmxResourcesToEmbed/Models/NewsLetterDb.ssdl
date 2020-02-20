@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NewsLetterDbModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;C:\Users\saleti.babu\Desktop\Newsletter latest\WindowsAuthenication\App_Data\NewsLetterDb.db&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SecurityStamp" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="adspath" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="department" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="location" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="distinguishedname" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="company" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="state" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="country" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="userprincipalname" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="UsersTable">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="title" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="location" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityContainer Name="NewsLetterDbModelStoreContainer">
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" store:Type="Tables" />
+    <EntitySet Name="UsersTable" EntityType="Self.UsersTable" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

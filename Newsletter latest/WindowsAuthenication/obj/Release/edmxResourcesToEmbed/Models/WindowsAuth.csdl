@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WindowsAuthenticationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="WindowsAuthenticationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="WindowsAuthenticationModel.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="WindowsAuthenticationModel.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="WindowsAuthenticationModel.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="WindowsAuthenticationModel.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="WindowsAuthenticationModel.AspNetUser" />
+    <EntitySet Name="Engagements" EntityType="WindowsAuthenticationModel.Engagement" />
+    <EntitySet Name="SubEngagements" EntityType="WindowsAuthenticationModel.SubEngagement" />
+    <EntitySet Name="UsersEngagementsMappings" EntityType="WindowsAuthenticationModel.UsersEngagementsMapping" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="WindowsAuthenticationModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="WindowsAuthenticationModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersEnga__Added__318258D2" Association="WindowsAuthenticationModel.FK__UsersEnga__Added__318258D2">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="UsersEngagementsMapping" EntitySet="UsersEngagementsMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersEnga__Modif__114A936A" Association="WindowsAuthenticationModel.FK__UsersEnga__Modif__114A936A">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="UsersEngagementsMapping" EntitySet="UsersEngagementsMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UsersEnga__UserI__123EB7A3" Association="WindowsAuthenticationModel.FK__UsersEnga__UserI__123EB7A3">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="UsersEngagementsMapping" EntitySet="UsersEngagementsMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubEngage__Engag__7B5B524B" Association="WindowsAuthenticationModel.FK__SubEngage__Engag__7B5B524B">
+      <End Role="Engagement" EntitySet="Engagements" />
+      <End Role="SubEngagement" EntitySet="SubEngagements" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="WindowsAuthenticationModel.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="WindowsAuthenticationModel.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="WindowsAuthenticationModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="WindowsAuthenticationModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="adspath" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="department" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="distinguishedname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="company" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="state" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="userprincipalname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="WindowsAuthenticationModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="WindowsAuthenticationModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="UsersEngagementsMappings" Relationship="WindowsAuthenticationModel.FK__UsersEnga__Added__318258D2" FromRole="AspNetUser" ToRole="UsersEngagementsMapping" />
+    <NavigationProperty Name="UsersEngagementsMappings1" Relationship="WindowsAuthenticationModel.FK__UsersEnga__Modif__114A936A" FromRole="AspNetUser" ToRole="UsersEngagementsMapping" />
+    <NavigationProperty Name="UsersEngagementsMappings2" Relationship="WindowsAuthenticationModel.FK__UsersEnga__UserI__123EB7A3" FromRole="AspNetUser" ToRole="UsersEngagementsMapping" />
+    <NavigationProperty Name="AspNetRoles" Relationship="WindowsAuthenticationModel.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+  </EntityType>
+  <EntityType Name="Engagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EngagementName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Addedby" Type="Guid" />
+    <Property Name="AddedByEmail" Type="String" MaxLength="90" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SubEngagements" Relationship="WindowsAuthenticationModel.FK__SubEngage__Engag__7B5B524B" FromRole="Engagement" ToRole="SubEngagement" />
+  </EntityType>
+  <EntityType Name="SubEngagement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubEngagementName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EngagementId_fk" Type="Int32" />
+    <NavigationProperty Name="Engagement" Relationship="WindowsAuthenticationModel.FK__SubEngage__Engag__7B5B524B" FromRole="SubEngagement" ToRole="Engagement" />
+  </EntityType>
+  <EntityType Name="UsersEngagementsMapping">
+    <Key>
+      <PropertyRef Name="UsersEngagementsMappingID" />
+    </Key>
+    <Property Name="EngagementID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="AddedAt" Type="DateTime" Precision="3" />
+    <Property Name="ModifedBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedAt" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="UsersEngagementsMappingID" Type="Guid" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="WindowsAuthenticationModel.FK__UsersEnga__Added__318258D2" FromRole="UsersEngagementsMapping" ToRole="AspNetUser" />
+    <NavigationProperty Name="AspNetUser1" Relationship="WindowsAuthenticationModel.FK__UsersEnga__Modif__114A936A" FromRole="UsersEngagementsMapping" ToRole="AspNetUser" />
+    <NavigationProperty Name="AspNetUser2" Relationship="WindowsAuthenticationModel.FK__UsersEnga__UserI__123EB7A3" FromRole="UsersEngagementsMapping" ToRole="AspNetUser" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="WindowsAuthenticationModel.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="WindowsAuthenticationModel.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersEnga__Added__318258D2">
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+    <End Type="WindowsAuthenticationModel.UsersEngagementsMapping" Role="UsersEngagementsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersEngagementsMapping">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersEnga__Modif__114A936A">
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+    <End Type="WindowsAuthenticationModel.UsersEngagementsMapping" Role="UsersEngagementsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersEngagementsMapping">
+        <PropertyRef Name="ModifedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UsersEnga__UserI__123EB7A3">
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="1" />
+    <End Type="WindowsAuthenticationModel.UsersEngagementsMapping" Role="UsersEngagementsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsersEngagementsMapping">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubEngage__Engag__7B5B524B">
+    <End Type="WindowsAuthenticationModel.Engagement" Role="Engagement" Multiplicity="0..1" />
+    <End Type="WindowsAuthenticationModel.SubEngagement" Role="SubEngagement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Engagement">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubEngagement">
+        <PropertyRef Name="EngagementId_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="WindowsAuthenticationModel.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="WindowsAuthenticationModel.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+</Schema>

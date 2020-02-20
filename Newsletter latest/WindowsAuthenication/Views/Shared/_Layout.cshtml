@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <hta:application applicationname="HTA test" scroll="yes" singleinstance="yes">
+        <title>@ViewBag.Title - NewsLetter</title>
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*<link href="~/Content/normalize.css" rel="stylesheet" />
+    <link href="~/Content/component2.css" rel="stylesheet" />
+    <link href="~/Content/demo.css" rel="stylesheet" />*@
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Engagements", "Index", "Engagement")</li>
+
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+    @*<div class="component">
+        <button class="cn-button" id="cn-button">Menu</button>
+        <div class="cn-wrapper" id="cn-wrapper">
+            <ul>
+                <li><a class="b" href="~/Home/EditorNote"><span class="spanb">Editor's Note</span></a></li>
+                <li><a class="c" href="~/Home/Spotlight"><span class="spanc">Spotlight<br />Chatapp</span></a></li>
+                <li><a class="d" href="~/Home/NewsYouCanUse"><span class="spand">News you can <br />use</span></a></li>
+                <li><a class="e" href="~/Home/EYBuzzPipeline"><span class="spane">EY Buzz </span></a></li>
+                <li><a class="f" href="~/Home/ARCreactor"><span class="spane">ARCreator</span></a></li>
+                <li><a class="g" href="~/Home/InnovationWeekCampaign"><span class="spanf">Innovation Week<br /> Campaign</span></a></li>
+                <li><a class="h" href="~/Home/OutcomeOfTheCampaign"><span class="spanh"> Outcome Of The <br />Campaign</span></a></li>
+                <li><a class="i" href="~/Home/Invention"><span class="spane">Invention</span></a></li>
+                <li><a class="j" href="~/Home/YamJamQuotes"><span class="spang">Yam Jam Quotes</span></a></li>
+                <li><a class="k" href="~/Home/Contact"><span class="spanh">Contact us</span></a></li>
+                <li><a class="l" href="~/Home/Index"><span class="spanb">Home</span></a></li>
+
+            </ul>
+        </div>
+    </div>*@
+    @*@Html.Partial("_LoginPartial")*@
+
+    @*<script src="~/Scripts/polyfills.js"></script>
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="~/Scripts/demo2.js"></script>*@
+
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+   
+   
+</body>
+</html>
